@@ -32,6 +32,8 @@ bash $path/go.sh -f
 mv -f $v2ray/config.json /etc/v2ray/config.json
 mv -f $v2ray/v2ray.sh $local/v2ray.sh
 
+chmod 777 $local/v2ray.sh
+
 service v2ray stop
 service v2ray start
 
