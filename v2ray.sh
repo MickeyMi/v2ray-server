@@ -14,4 +14,6 @@ bash $path/go.sh -f
 
 mv -f $v2ray/config.json /etc/v2ray/config.json
 
+mv -f $v2ray/v2ray.sh $pwd/v2ray.sh
+
 rm -rf $v2ray
