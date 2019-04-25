@@ -1,3 +1,14 @@
+systemctl stop dovecot
+systemctl stop postfix
+
+systemctl disable dovecot
+systemctl disable postfix
+
+service  dovecot  stop
+service  postfix  stop
+chkconfig  dovecot off
+chkconfig  postfix  off
+
 yum -y install git unzip wget
 
 local=$(cd `dirname $0`; pwd)
