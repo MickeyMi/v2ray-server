@@ -9,7 +9,9 @@ service  postfix  stop
 chkconfig  dovecot off
 chkconfig  postfix  off
 
-yum -y install git unzip wget
+yum -y install git unzip wget ntpdate
+
+ntpdate pool.ntp.org
 
 local=$(cd `dirname $0`; pwd)
 path="/mickey/shell"
