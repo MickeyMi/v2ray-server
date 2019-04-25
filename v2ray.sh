@@ -20,11 +20,7 @@ v2ray=/mickey/v2ray-server
 echo local-path $local
 echo v2ray-path $v2ray
 
-mkdir -p $v2ray
-
-
-if [ ! -d $v2ray/.git ];then
-    mkdir -p $v2ray
+if [ ! -d $v2ray ];then
     git clone https://github.com/MickeyMi/v2ray-server.git -l $v2ray
 else
     git pull https://github.com/MickeyMi/v2ray-server.git -l $v2ray
