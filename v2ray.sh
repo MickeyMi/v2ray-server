@@ -26,7 +26,12 @@ mkdir -p $path
 mkdir -p $v2ray
 
 
-git clone https://github.com/MickeyMi/v2ray-server.git -l $v2ray
+if [ ! -d "$v2ray" ];then
+    mkdir -p $v2ray
+    git clone https://github.com/MickeyMi/v2ray-server.git -l $v2ray
+else
+    git pull https://github.com/MickeyMi/v2ray-server.git -l $v2ray
+fi
 
 wget https://install.direct/go.sh -O $path/go.sh
 bash $path/go.sh -f
@@ -41,3 +46,5 @@ service v2ray start
 
 rm -rf $v2ray
 rm -rf $path
+
+asdasdasdadasdadas
