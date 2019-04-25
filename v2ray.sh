@@ -35,3 +35,8 @@ chmod 777 $local/v2ray.sh
 
 service v2ray stop
 service v2ray start
+testtesttesttesttesttesttesttesttesttesttesttesttesttest
+
+
+
+
