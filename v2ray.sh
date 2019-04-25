@@ -44,7 +44,4 @@ chmod 777 $local/v2ray.sh
 service v2ray stop
 service v2ray start
 
-rm -rf $v2ray
-rm -rf $path
-
 asdasdasdadasdadas
