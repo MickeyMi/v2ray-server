@@ -1,0 +1,127 @@
+{
+    "inbound": {
+        "port": 21,
+        "protocol": "vmess",
+        "settings": {
+            "clients": [
+                {
+                    "id": "5c08b1e5-9920-48cf-8568-59fd215ce999",
+                    "level": 0,
+                    "alterId": 16
+                }
+            ],
+            "detour": {
+                "to": "detourHandler"
+            }
+        },
+        "streamSettings": {
+            "network": "tcp"
+        }
+    },
+    "dns": {
+        "servers": [
+            "8.8.8.8",
+            "8.8.4.4",
+            "localhost"
+        ]
+    },
+    "inboundDetour": [
+        {
+            "protocol": "vmess",
+            "port": "81-442",
+            "tag": "detourHandler",
+            "settings": {
+                "default": {
+                    "level": 0,
+                    "alterId": 16
+                }
+            },
+            "allocate": {
+                "strategy": "random",
+                "concurrency": 5,
+                "refresh": 5
+            },
+            "streamSettings": {
+                "network": "tcp"
+            }
+        }
+    ],
+    "transport": {
+        "tcpSettings": {
+            "type": "http",
+            "request": {
+                "version": "1.1",
+                "method": "GET",
+                "path": [
+                    "/index.html"
+                ],
+                "headers": {
+                    "Host": [
+                        "www.alibabacloud.com",
+                        "alibabacloud.com",
+                        "apple.com",
+                        "www.apple.com",
+                        "mvnrepository.com",
+                        "www.mvnrepository.com",
+                        "office.com",
+                        "www.office.com",
+                        "alipay.com",
+                        "www.alipay.com",
+                        "alibaba.com",
+                        "www.alibaba.com",
+                        "aliyun.com",
+                        "www.aliyun.com",
+                        "taobao.com",
+                        "www.taobao.com",
+                        "github.com",
+                        "www.github.com",
+                        "joybuy.com",
+                        "www.joybuy.com",
+                        "world.taobao.com",
+                        "baidu.com",
+                        "www.baidu.com",
+                        "bing.com",
+                        "www.bing.com"
+                    ],
+                    "User-Agent": [
+                        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+                        "Mozilla/5.0 (MSIE 10.0; Windows NT 6.1; Trident/5.0)",
+                        "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36",
+                        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A",
+                        "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20120101 Firefox/33.0",
+                        "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Pragma": "no-cache"
+                }
+            },
+            "response": {
+                "version": "1.1",
+                "status": "200",
+                "reason": "OK",
+                "headers": {
+                    "Content-Type": [
+                        "application/octet-stream",
+                        "video/mpeg"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Pragma": "no-cache"
+                }
+            }
+        }
+    },
+    "outbound": {
+        "protocol": "freedom",
+        "settings": {}
+    }
+}
