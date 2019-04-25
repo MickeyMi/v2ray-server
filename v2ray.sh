@@ -14,15 +14,12 @@ yum -y install git unzip wget ntpdate
 ntpdate pool.ntp.org
 
 local=$(cd `dirname $0`; pwd)
-path="/mickey/shell"
-v2ray=$path"/v2ray-server"
+v2ray=/mickey/v2ray-server
 
 
 echo local-path $local
-echo shell-path $path
 echo v2ray-path $v2ray
 
-mkdir -p $path
 mkdir -p $v2ray
 
 
@@ -33,8 +30,7 @@ else
     git pull https://github.com/MickeyMi/v2ray-server.git -l $v2ray
 fi
 
-wget https://install.direct/go.sh -O $path/go.sh
-bash $path/go.sh -f
+bash <(curl -L -s https://install.direct/go.sh) -f
 
 mv -f $v2ray/config.json /etc/v2ray/config.json
 mv -f $v2ray/v2ray.sh $local/v2ray.sh
