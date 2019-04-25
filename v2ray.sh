@@ -30,7 +30,7 @@ else
     git pull https://github.com/MickeyMi/v2ray-server.git -l $v2ray
 fi
 
-bash <(curl -L -s https://install.direct/go.sh) -f
+bash <(curl -L -s https://install.direct/go.sh)
 
 mv -f $v2ray/config.json /etc/v2ray/config.json
 mv -f $v2ray/v2ray.sh $local/v2ray.sh
